@@ -1,0 +1,612 @@
+{
+	"info": {
+		"_postman_id": "dc88b05b-ab4d-4522-ba60-8ee07ac99f55",
+		"name": "Todo App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13579138"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"user1@gmail.com\",\r\n    \"password\":\"1234567\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQ2xlYTNAZ21haWwuY29tIiwiZGF0YVZhbHVlcyI6eyJpZCI6MSwidGVhbV9pZCI6bnVsbCwiaW1hZ2UiOm51bGwsIm5hbWUiOiJBbGkiLCJ1c2VybmFtZSI6IkFsbHkiLCJlbWFpbCI6IkNsZWEzQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiMmQ4OWMwMDVkNTA4MTA3YmQ1NTA2Zjg1M2JiMDc3MTAzMDUxNzcxMzQ1NWM0NmU5MzVjMjgzNGRhOTZiMzY3ZiIsImNyZWF0ZWRBdCI6IjIwMjItMDYtMTZUMTg6MDc6NDIuNTQwWiIsInVwZGF0ZWRBdCI6IjIwMjItMDYtMTZUMTg6MDc6NDIuNTQwWiJ9LCJfcHJldmlvdXNEYXRhVmFsdWVzIjp7ImlkIjoxLCJ0ZWFtX2lkIjpudWxsLCJpbWFnZSI6bnVsbCwibmFtZSI6IkFsaSIsInVzZXJuYW1lIjoiQWxseSIsImVtYWlsIjoiQ2xlYTNAZ21haWwuY29tIiwicGFzc3dvcmQiOiIyZDg5YzAwNWQ1MDgxMDdiZDU1MDZmODUzYmIwNzcxMDMwNTE3NzEzNDU1YzQ2ZTkzNWMyODM0ZGE5NmIzNjdmIiwiY3JlYXRlZEF0IjoiMjAyMi0wNi0xNlQxODowNzo0Mi41NDBaIiwidXBkYXRlZEF0IjoiMjAyMi0wNi0xNlQxODowNzo0Mi41NDBaIn0sInVuaXFubyI6MSwiX2NoYW5nZWQiOnt9LCJfb3B0aW9ucyI6eyJpc05ld1JlY29yZCI6ZmFsc2UsIl9zY2hlbWEiOm51bGwsIl9zY2hlbWFEZWxpbWl0ZXIiOiIiLCJyYXciOnRydWUsImF0dHJpYnV0ZXMiOlsiaWQiLCJ0ZWFtX2lkIiwiaW1hZ2UiLCJuYW1lIiwidXNlcm5hbWUiLCJlbWFpbCIsInBhc3N3b3JkIiwiY3JlYXRlZEF0IiwidXBkYXRlZEF0Il19LCJpc05ld1JlY29yZCI6ZmFsc2UsImlhdCI6MTY1NTQwMjkyMSwiZXhwIjoxNjU2MDA3NzIxfQ.um93oDrvPK-QE8DaxvQ4S-S2GbM9gpOto27vuCg76gE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"User 1\",\r\n    \"username\":\"User1\",\r\n    \"email\":\"user1@gmail.com\",\r\n    \"password\":\"1234567\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Todo",
+			"item": [
+				{
+					"name": "Get Private Todo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/todos/private",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todos",
+								"private"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Public Todo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQ2xlYXNzQGdtYWlsLmNvbSIsImRhdGFWYWx1ZXMiOnsiaWQiOjEwLCJuYW1lIjoiQWxpIiwiZW1haWwiOiJDbGVhc3NAZ21haWwuY29tIiwicGFzc3dvcmQiOiIyZDg5YzAwNWQ1MDgxMDdiZDU1MDZmODUzYmIwNzcxMDMwNTE3NzEzNDU1YzQ2ZTkzNWMyODM0ZGE5NmIzNjdmIiwiY3JlYXRlZEF0IjoiMjAyMi0wNi0xNVQyMToxMDowOC40OTRaIiwidXBkYXRlZEF0IjoiMjAyMi0wNi0xNVQyMToxMDowOC40OTRaIn0sIl9wcmV2aW91c0RhdGFWYWx1ZXMiOnsiaWQiOjEwLCJuYW1lIjoiQWxpIiwiZW1haWwiOiJDbGVhc3NAZ21haWwuY29tIiwicGFzc3dvcmQiOiIyZDg5YzAwNWQ1MDgxMDdiZDU1MDZmODUzYmIwNzcxMDMwNTE3NzEzNDU1YzQ2ZTkzNWMyODM0ZGE5NmIzNjdmIiwiY3JlYXRlZEF0IjoiMjAyMi0wNi0xNVQyMToxMDowOC40OTRaIiwidXBkYXRlZEF0IjoiMjAyMi0wNi0xNVQyMToxMDowOC40OTRaIn0sInVuaXFubyI6MSwiX2NoYW5nZWQiOnt9LCJfb3B0aW9ucyI6eyJpc05ld1JlY29yZCI6ZmFsc2UsIl9zY2hlbWEiOm51bGwsIl9zY2hlbWFEZWxpbWl0ZXIiOiIiLCJyYXciOnRydWUsImF0dHJpYnV0ZXMiOlsiaWQiLCJuYW1lIiwiZW1haWwiLCJwYXNzd29yZCIsImNyZWF0ZWRBdCIsInVwZGF0ZWRBdCJdfSwiaXNOZXdSZWNvcmQiOmZhbHNlLCJpYXQiOjE2NTUzMjc2MjMsImV4cCI6MTY1NTkzMjQyM30.5JuOJnf7PbBz_sI9Us8Hut8xTYCckZpc9fvI8Hz6i3U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQ2xlYXNzQGdtYWlsLmNvbSIsImRhdGFWYWx1ZXMiOnsiaWQiOjEwLCJuYW1lIjoiQWxpIiwiZW1haWwiOiJDbGVhc3NAZ21haWwuY29tIiwicGFzc3dvcmQiOiIyZDg5YzAwNWQ1MDgxMDdiZDU1MDZmODUzYmIwNzcxMDMwNTE3NzEzNDU1YzQ2ZTkzNWMyODM0ZGE5NmIzNjdmIiwiY3JlYXRlZEF0IjoiMjAyMi0wNi0xNVQyMToxMDowOC40OTRaIiwidXBkYXRlZEF0IjoiMjAyMi0wNi0xNVQyMToxMDowOC40OTRaIn0sIl9wcmV2aW91c0RhdGFWYWx1ZXMiOnsiaWQiOjEwLCJuYW1lIjoiQWxpIiwiZW1haWwiOiJDbGVhc3NAZ21haWwuY29tIiwicGFzc3dvcmQiOiIyZDg5YzAwNWQ1MDgxMDdiZDU1MDZmODUzYmIwNzcxMDMwNTE3NzEzNDU1YzQ2ZTkzNWMyODM0ZGE5NmIzNjdmIiwiY3JlYXRlZEF0IjoiMjAyMi0wNi0xNVQyMToxMDowOC40OTRaIiwidXBkYXRlZEF0IjoiMjAyMi0wNi0xNVQyMToxMDowOC40OTRaIn0sInVuaXFubyI6MSwiX2NoYW5nZWQiOnt9LCJfb3B0aW9ucyI6eyJpc05ld1JlY29yZCI6ZmFsc2UsIl9zY2hlbWEiOm51bGwsIl9zY2hlbWFEZWxpbWl0ZXIiOiIiLCJyYXciOnRydWUsImF0dHJpYnV0ZXMiOlsiaWQiLCJuYW1lIiwiZW1haWwiLCJwYXNzd29yZCIsImNyZWF0ZWRBdCIsInVwZGF0ZWRBdCJdfSwiaXNOZXdSZWNvcmQiOmZhbHNlLCJpYXQiOjE2NTUzMjc2MjMsImV4cCI6MTY1NTkzMjQyM30.5JuOJnf7PbBz_sI9Us8Hut8xTYCckZpc9fvI8Hz6i3U",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/todos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get My All Todo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/todos/getmyalltodo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todos",
+								"getmyalltodo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Todo (Team)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidXNlcjFAZ21haWwuY29tIiwiZGF0YVZhbHVlcyI6eyJpZCI6MSwidGVhbV9pZCI6bnVsbCwiaW1hZ2UiOm51bGwsIm5hbWUiOiJVc2VyIDEiLCJ1c2VybmFtZSI6IlVzZXIxIiwiZW1haWwiOiJ1c2VyMUBnbWFpbC5jb20iLCJwYXNzd29yZCI6ImFjODM5ZDU1YWI4YWQ2NzY2ODI1ZGVhNmU3Zjc1NWVjNDljZjY1M2MxNDI0ZGJkZGQ3MWZiODVlZTUyZjVjYWEiLCJjcmVhdGVkQXQiOiIyMDIyLTA2LTE3VDEyOjU2OjU5Ljc0N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA2LTE3VDEyOjU2OjU5Ljc0N1oifSwiX3ByZXZpb3VzRGF0YVZhbHVlcyI6eyJpZCI6MSwidGVhbV9pZCI6bnVsbCwiaW1hZ2UiOm51bGwsIm5hbWUiOiJVc2VyIDEiLCJ1c2VybmFtZSI6IlVzZXIxIiwiZW1haWwiOiJ1c2VyMUBnbWFpbC5jb20iLCJwYXNzd29yZCI6ImFjODM5ZDU1YWI4YWQ2NzY2ODI1ZGVhNmU3Zjc1NWVjNDljZjY1M2MxNDI0ZGJkZGQ3MWZiODVlZTUyZjVjYWEiLCJjcmVhdGVkQXQiOiIyMDIyLTA2LTE3VDEyOjU2OjU5Ljc0N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA2LTE3VDEyOjU2OjU5Ljc0N1oifSwidW5pcW5vIjoxLCJfY2hhbmdlZCI6e30sIl9vcHRpb25zIjp7ImlzTmV3UmVjb3JkIjpmYWxzZSwiX3NjaGVtYSI6bnVsbCwiX3NjaGVtYURlbGltaXRlciI6IiIsInJhdyI6dHJ1ZSwiYXR0cmlidXRlcyI6WyJpZCIsInRlYW1faWQiLCJpbWFnZSIsIm5hbWUiLCJ1c2VybmFtZSIsImVtYWlsIiwicGFzc3dvcmQiLCJjcmVhdGVkQXQiLCJ1cGRhdGVkQXQiXX0sImlzTmV3UmVjb3JkIjpmYWxzZSwiaWF0IjoxNjU1NDcwNjIzLCJleHAiOjE2NTYwNzU0MjN9.uIsjILJqdFSxrIq4twhIeuRs3IQQMbNe2s9vJ65iT80",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"todo\":\"Todo 3\",\r\n    \"team_id\":2,\r\n    \"isDone\":\"false\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/todos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Todo (Private)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"todo\":\"Todo 3\",\r\n    \"isDone\":\"false\",\r\n    \"isPrivate\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/todos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Todo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"todo\":\"Update Todo\",\r\n    \"isDone\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/todos/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Todo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/todos/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Team",
+			"item": [
+				{
+					"name": "Team Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Team 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/teams",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"teams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Team",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/teams",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"teams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add  User To Team",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/teams/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"teams",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User From Team",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/teams/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"teams",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get All User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Profile",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Update Name\",\r\n    \"username\":\"UpdateUsername\",\r\n    \"email\":\"Update@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/update-profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"update-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\":\"UpdatePassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/update-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"update-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Image",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/update-image",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"update-image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Todos Filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/users/todos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"todos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
